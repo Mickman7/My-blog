@@ -12,13 +12,21 @@ function Login() {
 
 
   return (
-    <div className="text-center">
-        <form onSubmit={handleSubmit}>
-            <label className='text-sky-400' htmlFor='email'>Email</label>
-            <input type="email" placeholder='Enter Email' onChange={(e) => {setEmail(e.target.value)}}/>
+    <div className="flex justify-center items-center">
+        <form className='w-auto h-auto p-8 border rounded flex flex-col justify-center items-center' onSubmit={handleSubmit}>
+          <h1 className='font-bold text-2xl'>Login</h1>
+
+          <div className='m-2 flex flex-col'>
+            <label className='' htmlFor='email'>Email</label>
+            <input className='border-2 rounded' type="email" placeholder='Enter Email' onChange={(e) => {setEmail(e.target.value)}}/>
+          </div>
+
+          <div className='m-2 flex flex-col'>
             <label htmlFor="password">Password</label>
-            <input type="password" placeholder='Enter Password' onChange={(e) => {setPassword(e.target.value)}} />
-            <button>Login</button>
+            <input className='border-2 rounded' type="password" placeholder='Enter Password' onChange={(e) => {setPassword(e.target.value)}} />
+          </div>
+
+            <button className='w-48 h-8 mt-8 bg-sky-500 rounded-2xl '>Login</button>
             <a href="#">Register</a>
         </form>
     </div>
