@@ -1,5 +1,6 @@
 import './App.css';
 import { useState, useEffect } from 'react';
+import Login from './components/Login';
 
 function App() {
   const [backendData, setBackendData] = useState([{}]);
@@ -13,11 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      {typeof backendData.users === 'undefined' ? (
-        <p>Loading...</p>
-      ) : (
-        backendData.users.map((user, i) => <p key={i}>{user}</p>)
-      )}
+      <Login/>
     </div>
   );
 }
