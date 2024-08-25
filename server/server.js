@@ -1,10 +1,18 @@
 const express = require('express');
-const app = express();
+const cors = require('corse');
+const mongoose = require('mongoose');
+
 const port = 5000;
 
-app.get('/api', (req, res) => {
-  res.json({ users: ['user1', 'user2', 'user3', 'user4'] });
-});
+const app = express();
+app.use(express.json())
+app.use(cors())
+
+mongoose.connect()
+
+
+
+
 
 app.listen(port, () => {
   console.log(`server started on port ${port}`);
