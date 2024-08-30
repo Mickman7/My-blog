@@ -24,7 +24,7 @@ const UserAuthForm = ({type})  =>{
     const handleSubmit = (e) => {
       e.preventDefault();
 
-      let serverRoute = type == "login" ? "/login" : "/signup";
+      let serverRoute = type == "sign-in" ? "/signin" : "/signup";
 
       let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; // regex for email
       let passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/; // regex for password
@@ -88,8 +88,8 @@ const UserAuthForm = ({type})  =>{
             <input className='p-1 border-[1px] rounded' type="password" name='password' placeholder='Enter Password' onChange={(e) => {setPassword(e.target.value)}} />
           </div>
 
-            <button className='w-48 h-8 mt-8 bg-sky-500 rounded-2xl '>{type == "sign-up" ? "Sign-up" : "Sign-in"}</button>
-            {type == "sign-in" ? <NavLink to="/signup">Register</NavLink> : ""}
+            <button className='w-48 h-8 mt-8 bg-sky-500 rounded-2xl hover:bg-sky-600'>{type == "sign-up" ? "Sign-up" : "Sign-in"}</button>
+            {type == "sign-in" ? <NavLink className="mt-2 hover:text-violet-800" to="/signup">Register</NavLink> : ""}
             
         </form>
     </div>

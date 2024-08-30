@@ -75,7 +75,7 @@ app.post('/signup', (req, res) => {
   
 });
 
-app.post('/login', (req,res) => {
+app.post('/signin', (req,res) => {
   let {email,password} = req.body;
 
   User.findOne({"personal_info.email": email})
