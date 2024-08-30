@@ -1,6 +1,8 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import Login from './components/Login';
+import UserAuthForm from './components/UserAuthForm';
+import { Routes,Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
 
 function App() {
   const [backendData, setBackendData] = useState([{}]);
@@ -14,7 +16,13 @@ function App() {
 
   return (
     <div className="App">
-      <Login/>
+      <Routes>
+        <Route path='/' element={<Navbar/>}>
+          <Route path='/signup' element={<UserAuthForm type="sign-up" />}/>
+          <Route path='/signin' element={<UserAuthForm type="sign-in" />}/>
+        </Route>
+      </Routes>
+      
     </div>
   );
 }

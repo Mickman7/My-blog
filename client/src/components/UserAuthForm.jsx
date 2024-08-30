@@ -1,8 +1,9 @@
 import React, { useRef, useState } from 'react'
 import axios from 'axios';
+import { NavLink } from 'react-router-dom';
 
 
-function Login() {
+const UserAuthForm = ({type})  =>{
     const [username,setUsername] = useState('');
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
@@ -64,29 +65,35 @@ function Login() {
 
   return (
     <div className="flex justify-center items-center">
-        <form ref={authForm} className='w-auto h-auto p-8 border rounded flex flex-col justify-center items-center' onSubmit={handleSubmit}>
-          <h1 className='font-bold text-2xl'>Login</h1>
+        <form ref={authForm} className='w-96 h-auto p-8 border rounded flex flex-col justify-center items-center' onSubmit={handleSubmit}>
+          <h1 className='mb-4 font-bold text-4xl'>{type == "sign-up" ? "Sign up" : "Sign in"}</h1>
+          {
+            type != "sign-in" ? (
 
-          <div className='m-2 flex flex-col'>
-            <label className='' htmlFor='username'>Username</label>
-            <input className='border-2 rounded' type="text" name='username' placeholder='Enter Username' onChange={(e) => {setUsername(e.target.value)}}/>
-          </div>
+            <div className='m-2 relative w-[100%] flex flex-col'>
+              <label className='' htmlFor='username'>Username</label>
+              <input className='p-1 border-[1px] rounded' type="text" name='username' placeholder='Enter Username' onChange={(e) => {setUsername(e.target.value)}}/>
+            </div>
 
-          <div className='m-2 flex flex-col'>
+            ) : ""
+          }
+
+          <div className='m-2 relative w-[100%] flex flex-col'>
             <label className='' htmlFor='email'>Email</label>
-            <input className='border-2 rounded' type="email" name='email' placeholder='Enter Email' onChange={(e) => {setEmail(e.target.value)}}/>
+            <input className='p-1 border-[1px] rounded' type="email" name='email' placeholder='Enter Email' onChange={(e) => {setEmail(e.target.value)}}/>
           </div>
 
-          <div className='m-2 flex flex-col'>
+          <div className='m-2 relative w-[100%] flex flex-col'>
             <label htmlFor="password">Password</label>
-            <input className='border-2 rounded' type="password" name='password' placeholder='Enter Password' onChange={(e) => {setPassword(e.target.value)}} />
+            <input className='p-1 border-[1px] rounded' type="password" name='password' placeholder='Enter Password' onChange={(e) => {setPassword(e.target.value)}} />
           </div>
 
-            <button className='w-48 h-8 mt-8 bg-sky-500 rounded-2xl '>Login</button>
-            <a href="#">Register</a>
+            <button className='w-48 h-8 mt-8 bg-sky-500 rounded-2xl '>{type == "sign-up" ? "Sign-up" : "Sign-in"}</button>
+            {type == "sign-in" ? <NavLink to="/signup">Register</NavLink> : ""}
+            
         </form>
     </div>
   )
 }
 
-export default Login
+export default UserAuthForm
