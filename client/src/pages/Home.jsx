@@ -3,7 +3,9 @@ import React from 'react'
 const Home = () => {
   return (
     <div className='text-4xl flex justify-center text-center'>
-      <h1>This is the <strong>Home</strong> page</h1>
+      <div className='inline-block'>
+        <h1 className='overflow-hidden border-r-[0.15] border-r-sky-700 border-r-solid whitespace-nowrap  animate-typing'>This is the <strong>Home</strong> page</h1>
+      </div>
     </div>
   )
 }
