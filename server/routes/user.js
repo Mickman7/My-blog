@@ -5,7 +5,7 @@ const { loginUser, signupUser } = require('../controllers/userController')
 const server = express.Router()
 
 // login route
-server.post('/login', loginUser)
+server.post('/signin', loginUser)
 
 // signup route
 server.post('/signup', signupUser)

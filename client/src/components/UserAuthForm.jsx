@@ -18,7 +18,7 @@ const UserAuthForm = ({type})  =>{
       e.preventDefault();
       
       console.log(username, email, password);
-      // await signup(username, email, password);
+      await signup(username, email, password);
     }
 
 
