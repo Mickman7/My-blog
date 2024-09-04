@@ -2,6 +2,9 @@ import React, { useRef, useState } from 'react'
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import { useSignup } from "../hooks/useSignup";
+import { useSignin } from '../hooks/useSignin';
+import { useAuthContext } from '../hooks/useAuthContext'
+
 
 
 const UserAuthForm = ({type})  =>{
@@ -9,6 +12,8 @@ const UserAuthForm = ({type})  =>{
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
     const {signup, error, isLoading} = useSignup();
+    const {signin} = useSignin();
+
 
 
     const authForm = useRef();
@@ -17,8 +22,12 @@ const UserAuthForm = ({type})  =>{
     const handleSubmit = async (e) => {
       e.preventDefault();
       
-      console.log(username, email, password);
-      await signup(username, email, password);
+      if(type === "signup"){
+        await signup(username, email, password);
+      }
+      else{
+        await signin(email, password);
+      }
     }
 
 
@@ -50,6 +59,7 @@ const UserAuthForm = ({type})  =>{
 
             <button className='w-48 h-8 mt-8 bg-sky-500 rounded-2xl hover:bg-sky-600'>{type == "sign-up" ? "Sign-up" : "Sign-in"}</button>
             {type == "sign-in" ? <NavLink className="mt-2 hover:text-violet-800" to="/signup">Register</NavLink> : ""}
+            {error && <div className='p-2 mt-2 border-2 rounded'>{error}</div>}
             
         </form>
     </div>
