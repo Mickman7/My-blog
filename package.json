@@ -1,7 +1,15 @@
 {
+  "scripts": {
+    "start": "concurrently \"npm run start --prefix client\" \"npm run dev --prefix server\"",
+    "start:frontend": "npm --prefix frontend start",
+    "start:backend": "npm --prefix backend start"
+  },
   "dependencies": {
     "bcrypt": "^5.1.1",
     "dotenv": "^16.4.5",
     "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }

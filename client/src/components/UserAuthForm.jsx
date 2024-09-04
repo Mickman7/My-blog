@@ -15,9 +15,10 @@ const UserAuthForm = ({type})  =>{
 
     
     const handleSubmit = async (e) => {
-      e.preventDefault()
-  
-      await signup(email, password)
+      e.preventDefault();
+      
+      console.log(username, email, password);
+      // await signup(username, email, password);
     }
 
 
