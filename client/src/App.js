@@ -7,6 +7,8 @@ import Home from './pages/Home';
 import { useAuthContext } from './hooks/useAuthContext'
 import Blogs from './pages/Blogs';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 function App() {
   const { user } = useAuthContext()
@@ -21,7 +23,6 @@ function App() {
           <Route path='/signin' element={!user ? <UserAuthForm type="sign-in" /> : <Navigate to='/'/>}/>
         </Route>
       </Routes>
-      
     </div>
   );
 }
