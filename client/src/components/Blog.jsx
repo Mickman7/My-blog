@@ -1,7 +1,15 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 const Blog = ({blogs}) => {
+  const navigate = useNavigate();
+
   
+  const handleClick = () => {
+    navigate('/add');
+  }
+
   return (
     <div className='p-2 m-2 w-64 h-auto border-2 rounded flex flex-col justify-center'>
         <h2 className='my-4 font-bold text-center'>{blogs.title}</h2>
