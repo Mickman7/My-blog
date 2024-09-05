@@ -1,23 +1,22 @@
 require('dotenv').config({path: '../.env'});
 
-
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const validator = require('validator');
-const userRoutes = require('./routes/user')
+const userRoutes = require('./routes/user');
+const blogRoutes = require('./routes/blog');
 
 const User = require('./Schema/User');
-const { loginUser, signupUser } = require('./controllers/userController')
+const Blog = require('./Schema/Blog')
 
 const port = 5000;
 
 const app = express();
 app.use(express.json());
 app.use(cors());
+
 app.use('/api/user', userRoutes)
+app.use('/api/blogs', blogRoutes)
 
 
 

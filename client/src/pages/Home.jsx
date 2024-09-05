@@ -1,6 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Home = () => {
+  const [blogs, setBlogs] = useState();
+
+  const fetchBlogs = async () => {
+    const response = fetch('/api/blogs')
+  }
+
+  useEffect(() =>{
+    fetchBlogs();
+  })
+  
   return (
     <div className='text-4xl flex justify-center text-center'>
       <div className='inline-block'>
