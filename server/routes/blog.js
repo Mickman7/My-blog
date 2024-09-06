@@ -1,4 +1,5 @@
 const express = require('express')
+const upload = require('../controllers/multerConfig')
 const {
   getBlogs, 
   getBlog, 
@@ -18,7 +19,7 @@ router.get('/blogs', getBlogs)
 router.get('/blogs/:id', getBlog)
 
 // POST a new Blog
-router.post('/blogs', createBlog)
+router.post('/blogs', upload.single('image'), createBlog)
 
 
 
