@@ -22,6 +22,7 @@ const Blogs = () => {
         }
     }
 
+
     const handleClick = () => {
         navigate('/add');
       }
@@ -41,7 +42,7 @@ const Blogs = () => {
             )}
 
             <h1 className='font-bold mb-[20px]'>Discover More Blogs</h1>
-            <div className='p-10 grid gap-x-2 gap-y-4 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 justify-center items-center'>
+            <div className='p-20 grid gap-x-4 gap-y-4 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2'>
                 {blogs && blogs.map((blogs) => (
                     <Blog key={blogs.id} blogs={blogs}/>
                 ))}
