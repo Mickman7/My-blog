@@ -11,7 +11,7 @@ const Blog = ({blogs}) => {
 
 
   return (
-    <div className='m-2 w-full h-full border-[1px] rounded shadow hover:shadow-xl flex flex-col justify-between'>
+    <div className='m-2 w-full h-full border-[1px] rounded shadow hover:shadow-xl cursor-pointer flex flex-col justify-between'>
         <img className='w-50 h-32' src={imageUrl} alt="blog image" />
         <h2 className='mx-2 font-bold text-start'>{blogs.title}</h2>
         <h4 className='mx-2 text-start' >{blogs.author}</h4>
