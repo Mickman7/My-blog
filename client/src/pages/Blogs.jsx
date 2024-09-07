@@ -31,6 +31,15 @@ const Blogs = () => {
         fetchBlogs();
     },[])
 
+    if (!blogs) {
+        return (
+          <div class='flex space-x-2 justify-center items-center bg-white h-screen'>
+            <div class="border-gray-300 h-10 w-10 animate-spin rounded-full border-8 border-t-blue-600" />
+          </div>
+    
+        );
+      }
+
   return (
     <div>
         <div className='text-center'>

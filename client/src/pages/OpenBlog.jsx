@@ -1,29 +1,39 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import Blog from '../components/FullBlog'
 
+const OpenBlog = () => {
+  const [postInfo, setPostInfo] = useState(null);
+  const { id } = useParams();
 
-const OpenBlog = async () => {
-    const imageUrl = `http://localhost:5000/uploads/${postInfo.cover}`
-    cconst [postInfo,setPostInfo] = useState(null);
+  useEffect(() => {
+    const fetchBlog = async () => {
+      const response = await fetch(`/api/blogs/blogs/${id}`);
+      const json = await response.json();
 
-    const {id} = useParams();
-    useEffect(() => {
-        fetch(`http://localhost:4000/post/${id}`)
-        .then(response => {
-            response.json().then(postInfo => {
-            setBlog(postInfo);
-            });
-        });
-    }, []);
+      if (response.ok) {
+        setPostInfo(json);
+        console.log(json);
+      }
+    };
 
+    fetchBlog();
+  }, [id]);
+
+  if (!postInfo) {
+    return (
+      <div class='flex space-x-2 justify-center items-center bg-white h-screen'>
+        <div class="border-gray-300 h-10 w-10 animate-spin rounded-full border-8 border-t-blue-600" />
+      </div>
+
+    );
+  }
 
   return (
-    <div>
-        <img className='' src={imageUrl} alt="blog image" />
-        <h2 className='mx-2 font-bold text-start'>{postInfo.title}</h2>
-        <h4 className='mx-2 text-start' >{postInfo.author}</h4>
-        <p className='mx-2 my-2 font-semibold text-start'>{postInfo.description}</p>
+    <div className='p-5 flex justify-center items-center'>
+      <Blog key={postInfo.id} blog={postInfo}/>
     </div>
-  )
-}
+  );
+};
 
-export default OpenBlog
+export default OpenBlog;

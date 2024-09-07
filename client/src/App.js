@@ -17,9 +17,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Navbar/>}>
           <Route path='/' element={<Home/>}/>
-          <Route path='/blogs' element={<Blogs/>}>
-            <Route path='blogs/:id' element={<OpenBlog />}/>
-          </Route>
+          <Route path='/blogs' element={<Blogs/>}/>
+          <Route path='blogs/:id' element={<OpenBlog />}/>
           <Route path='/signup' element={!user ? <UserAuthForm type="sign-up" /> : <Navigate to='/'/>}/>
           <Route path='/signin' element={!user ? <UserAuthForm type="sign-in" /> : <Navigate to='/'/>}/>
           <Route path='/add' element={user && <AddBlogPage />}/>
