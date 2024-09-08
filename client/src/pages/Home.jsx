@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Hero from '../components/Hero';
 import PostCategory from '../components/PostCategory';
 import Category from '../components/Category';
+import About from './About'
 
 
 const Home = () => {
@@ -23,6 +24,7 @@ const Home = () => {
       <PostCategory />
       <Category name="Popular"/>
       <PostCategory />
+      <About/>
     </div>
   )
 }
