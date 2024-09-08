@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <>
-    <nav className='p-1 mb-5 border-b-2 flex items-center'>
+    <nav className='p-1 border-b-2 flex items-center'>
         <img className='w-12 h-12 mr-8' src={blogLogo} alt="nav logo" />
         <div className='relative flex justify-around items-center gap-2'>
             <NavLink className='p-1 m-2 rounded hover:bg-gray-200' to="/">Home</NavLink>
@@ -28,9 +28,9 @@ const Navbar = () => {
                 <NavLink className='rounded-full px-4 py-1 bg-blue-500 text-blue-100 hover:bg-blue-600 duration-300' to="/signin" onClick={handleClick}>Log out</NavLink>
               </div>
             ): (
-              <div className='absolute right-0 mr-5 flex gap-[5px]'>
-                <NavLink className='rounded-full px-4 py-1 bg-blue-500 text-blue-100 hover:bg-blue-600 duration-300' to="/signup">Signup</NavLink>
-                <NavLink className='rounded-full px-4 py-1 border-[1px] border-blue-500 text-blue-500 hover:bg-blue-600 hover:text-blue-100 duration-300' to="/signin">Signin</NavLink>
+              <div className='absolute right-0 mr-5 flex justify-center items-center gap-[5px]'>
+                <NavLink className='rounded-full px-4 py-1 font-semibold hover:underline underline-offset-4 text-indigo-500 duration-300' to="/signin">Signin</NavLink>
+                <NavLink className='rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600' to="/signup">Signup</NavLink>
               </div>
             )}
         

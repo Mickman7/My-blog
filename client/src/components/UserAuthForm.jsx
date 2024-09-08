@@ -57,7 +57,7 @@ const UserAuthForm = ({type})  =>{
             <input className='p-1 border-[1px] rounded' type="password" name='password' placeholder='Enter Password' onChange={(e) => {setPassword(e.target.value)}} />
           </div>
 
-            <button className='w-48 h-8 mt-8 bg-sky-500 rounded-2xl hover:bg-sky-600'>{type == "sign-up" ? "Sign-up" : "Sign-in"}</button>
+            <button className='w-48 h-8 mt-8 bg-indigo-600 rounded-2xl hover:bg-indigo-500 text-white'>{type == "sign-up" ? "Sign up" : "Sign in"}</button>
             {type == "sign-in" ? <NavLink className="mt-2 hover:text-violet-800" to="/signup">Register</NavLink> : ""}
             {error && <div className='p-2 mt-2 border-2 rounded'>{error}</div>}
             

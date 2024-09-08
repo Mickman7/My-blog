@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Hero from '../components/Hero';
+import PostCategory from '../components/PostCategory';
+import Category from '../components/Category';
 
 
 const Home = () => {
@@ -14,12 +17,12 @@ const Home = () => {
   })
   
   return (
-    <div className='text-4xl flex justify-center text-center'>
-      <div className='inline-block'>
-        <h1 className='overflow-hidden border-r-[0.15] border-r-sky-700 border-r-solid whitespace-nowrap  animate-typing'>This is the <strong>Home</strong> page</h1>
-        <p>Go back to ep 14</p>
-        <FontAwesomeIcon className='bg-red-500' icon="fa-regular fa-square-plus" />
-      </div>
+    <div className='block text-4xl overflow-hidden'>
+      <Hero/>
+      <Category name="Latest"/>
+      <PostCategory />
+      <Category name="Popular"/>
+      <PostCategory />
     </div>
   )
 }

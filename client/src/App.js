@@ -6,6 +6,7 @@ import { useAuthContext } from './hooks/useAuthContext';
 import Blogs from './pages/Blogs';
 import AddBlogPage from './pages/AddBlogPage';
 import OpenBlog from './pages/OpenBlog';
+import NotFound from './pages/NotFound';
 
 
 
@@ -22,6 +23,7 @@ function App() {
           <Route path='/signup' element={!user ? <UserAuthForm type="sign-up" /> : <Navigate to='/'/>}/>
           <Route path='/signin' element={!user ? <UserAuthForm type="sign-in" /> : <Navigate to='/'/>}/>
           <Route path='/add' element={user && <AddBlogPage />}/>
+          <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
     </div>
