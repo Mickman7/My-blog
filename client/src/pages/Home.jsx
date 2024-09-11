@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import PostCategory from '../components/PostCategory';
 import Category from '../components/Category';
 import About from './About'
+import Footer from '../components/Footer';
 
 
 const Home = () => {
@@ -25,6 +26,7 @@ const Home = () => {
       <Category name="Popular"/>
       <PostCategory />
       <About/>
+      <Footer/>
     </div>
   )
 }
