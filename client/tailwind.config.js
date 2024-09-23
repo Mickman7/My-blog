@@ -14,7 +14,11 @@ module.exports = {
       },
       animation: {
         typing: 'typing 3s steps(40, end)',
-      }
+      },
+      colors: {
+        'about': '#93A5B8',
+        'footer': '#B5BBCF',
+      },
     },
   },
   plugins: [],

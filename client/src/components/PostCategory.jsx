@@ -22,12 +22,12 @@ const PostCategory = () => {
     },[])
 
   return (
-    <div className='p-10 flex justify-center items-center'>
+    <div className='p-10 w-5/6 flex justify-center items-center'>
         <button><FontAwesomeIcon icon={faChevronLeft} /></button>
-        <div className='px-10 grid gap-x-4 gap-y-4 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1'>
+        <div className='px-4 grid gap-x-4 gap-y-4 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1'>
             
             {blogs && blogs.slice(0,3).map((blogs) => (
-                <Blog key={blogs.id} blogs={blogs}/>
+                <Blog className="w-[200px]" key={blogs.id} blogs={blogs}/>
             ))}
         </div>
         <button><FontAwesomeIcon icon={faChevronRight} /></button>

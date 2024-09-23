@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import PostCategory from '../components/PostCategory';
 import Category from '../components/Category';
 import About from './About'
+import Author from '../components/Author'
 import Footer from '../components/Footer';
 
 
@@ -21,11 +22,20 @@ const Home = () => {
   return (
     <div className='block text-4xl overflow-hidden'>
       <Hero/>
+
       <Category name="Latest"/>
-      <PostCategory />
+      <div className='flex flex-col justify-center items-center'>
+        <PostCategory />
+      </div>
+
       <Category name="Popular"/>
-      <PostCategory />
+      <div className='flex flex-col justify-center items-center'>
+        <PostCategory />
+      </div>
+
+
       <About/>
+      <Author name="VE Schwab"/>
       <Footer/>
     </div>
   )
