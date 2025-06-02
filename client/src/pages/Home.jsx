@@ -6,6 +6,8 @@ import Category from '../components/Category';
 import About from './About'
 import Author from '../components/Author'
 import Footer from '../components/Footer';
+import ExploreSection from '../components/ExploreSection';
+import NewsletterSection from '../components/NewsletterSection';
 
 
 const Home = () => {
@@ -22,6 +24,8 @@ const Home = () => {
   return (
     <div className='block text-4xl overflow-hidden'>
       <Hero/>
+      <ExploreSection/>
+      <NewsletterSection/>
 
       <Category name="Latest"/>
       <div className='flex flex-col justify-center items-center'>

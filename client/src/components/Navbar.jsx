@@ -21,6 +21,8 @@ const Navbar = () => {
         <div className='relative flex justify-around items-center gap-2'>
             <NavLink className='p-1 m-2 rounded hover:bg-gray-200' to="/">Home</NavLink>
             <NavLink className='p-1 m-2 rounded hover:bg-gray-200' to="/blogs">Blogs</NavLink>
+            <NavLink className='p-1 m-2 rounded hover:bg-gray-200' to="/about">About Us</NavLink>
+            <NavLink className='p-1 m-2 rounded hover:bg-gray-200' to="/blogs">Categories</NavLink>
         </div>
             {user ? (
               <div className='absolute right-0 mr-5'>
@@ -29,8 +31,9 @@ const Navbar = () => {
               </div>
             ): (
               <div className='absolute right-0 mr-5 flex justify-center items-center gap-[5px]'>
+                <NavLink className='rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600' to="/signup">Join</NavLink>
                 <NavLink className='rounded-full px-4 py-1 font-semibold hover:underline underline-offset-4 text-indigo-500 duration-300' to="/signin">Signin</NavLink>
-                <NavLink className='rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600' to="/signup">Signup</NavLink>
+                
               </div>
             )}
         

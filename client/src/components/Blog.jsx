@@ -5,14 +5,14 @@ import { useAuthContext } from '../hooks/useAuthContext'
 
 
 
-const Blog = ({blogs}) => {
+const Blog = ({blogs, imgStyles}) => {
   const imageUrl = `http://localhost:5001/uploads/${blogs.image}`
   const { user } = useAuthContext();
 
 
   return (
     <div className='m-2 w-auto h-auto border-[1px] rounded shadow hover:shadow-xl cursor-pointer flex flex-col justify-between'>
-        <img className='w-50 h-50%' src={imageUrl} alt="blog image" />
+        <img className={`w-full h-1/2 object-cover ${imgStyles}`} src={imageUrl} alt="blog image" />
         <h2 className='mx-2 text-lg font-bold text-start'>{blogs.title}</h2>
         <h4 className='mx-2 text-base text-start' >{blogs.author}</h4>
         <p className='mx-2 my-2 text-base font-semibold text-start'>{blogs.description}</p>

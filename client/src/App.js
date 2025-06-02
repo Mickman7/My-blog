@@ -7,6 +7,7 @@ import Blogs from './pages/Blogs';
 import AddBlogPage from './pages/AddBlogPage';
 import OpenBlog from './pages/OpenBlog';
 import NotFound from './pages/NotFound';
+import About from './pages/About';
 
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route path='/signup' element={!user ? <UserAuthForm type="sign-up" /> : <Navigate to='/'/>}/>
           <Route path='/signin' element={!user ? <UserAuthForm type="sign-in" /> : <Navigate to='/'/>}/>
           <Route path='/add' element={user && <AddBlogPage />}/>
+          <Route path='/about' element={<About/>}/>
           <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
