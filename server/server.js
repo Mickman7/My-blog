@@ -9,7 +9,7 @@ const blogRoutes = require('./routes/blog');
 const User = require('./Schema/User');
 const Blog = require('./Schema/Blog')
 
-const port = 5000;
+const port = 5001;
 
 const app = express();
 app.use(express.json());

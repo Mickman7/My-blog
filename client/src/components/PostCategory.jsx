@@ -5,10 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const PostCategory = () => {
     const [blogs, setBlogs] = useState();
-
+    const [currentPage, setCurrentPage] = useState(0);
+    const blogsPerPage = 3;
 
     const fetchBlogs = async () => {
-        const response = await fetch('/api/blogs/blogs');
+        const response = await fetch('http://localhost:5001/api/blogs/blogs');
         const json = await response.json();
         console.log(json)
 
@@ -21,16 +22,31 @@ const PostCategory = () => {
         fetchBlogs();
     },[])
 
+    const handleNext = () => {
+        if (blogs && (currentPage + 1) * blogsPerPage < blogs.length) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
+    const handlePrevious = () => {
+        if (currentPage > 0) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
+
   return (
     <div className='p-10 w-5/6 flex justify-center items-center'>
-        <button><FontAwesomeIcon icon={faChevronLeft} /></button>
+        <button onClick={handlePrevious} disabled={currentPage === 0}>
+            <FontAwesomeIcon icon={faChevronLeft} />
+        </button>
         <div className='px-4 grid gap-x-4 gap-y-4 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1'>
-            
-            {blogs && blogs.slice(0,3).map((blogs) => (
-                <Blog className="w-[200px]" key={blogs.id} blogs={blogs}/>
+            {blogs && blogs.slice(currentPage * blogsPerPage, (currentPage + 1) * blogsPerPage).map((blog) => (
+                <Blog className="w-[200px]" key={blog.id} blogs={blog} />
             ))}
         </div>
-        <button><FontAwesomeIcon icon={faChevronRight} /></button>
+        <button onClick={handleNext} disabled={blogs && (currentPage + 1) * blogsPerPage >= blogs.length}>
+            <FontAwesomeIcon icon={faChevronRight} />
+        </button>
     </div>
   )
 }

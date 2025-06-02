@@ -6,7 +6,7 @@ import { useAuthContext } from '../hooks/useAuthContext'
 
 
 const Blog = ({blogs}) => {
-  const imageUrl = `http://localhost:5000/uploads/${blogs.image}`
+  const imageUrl = `http://localhost:5001/uploads/${blogs.image}`
   const { user } = useAuthContext();
 
 

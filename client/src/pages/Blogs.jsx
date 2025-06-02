@@ -13,7 +13,7 @@ const Blogs = () => {
 
 
     const fetchBlogs = async () => {
-        const response = await fetch('/api/blogs/blogs');
+        const response = await fetch('http://localhost:5001/api/blogs/blogs');
         const json = await response.json();
         console.log(json)
 
