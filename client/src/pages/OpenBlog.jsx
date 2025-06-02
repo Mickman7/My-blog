@@ -8,7 +8,7 @@ const OpenBlog = () => {
 
   useEffect(() => {
     const fetchBlog = async () => {
-      const response = await fetch(`http://localhost:5001/api/blogs/blogs/${id}`);
+      const response = await fetch(`https://my-blog-i44r.onrender.com/api/blogs/blogs/${id}`);
       const json = await response.json();
 
       if (response.ok) {

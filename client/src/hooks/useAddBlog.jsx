@@ -5,7 +5,7 @@ import React from 'react'
 export const useAddBlog = () => {
 
     const addBlog = async (formData) => {
-        const response = await fetch('http://localhost:5000/api/blogs/blogs', {
+        const response = await fetch('https://my-blog-i44r.onrender.com/api/blogs/blogs', {
             method: 'POST',
             body: formData
           })

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const FullBlog = ({blog}) => {
-  const imageUrl = `http://localhost:5001/uploads/${blog.image}`
+  const imageUrl = `https://my-blog-i44r.onrender.com/uploads/${blog.image}`
 
   return (
     <div className='p-5 flex flex-col items-center'>

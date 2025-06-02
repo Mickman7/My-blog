@@ -6,7 +6,7 @@ import { useAuthContext } from '../hooks/useAuthContext'
 
 
 const Blog = ({blogs, imgStyles}) => {
-  const imageUrl = `http://localhost:5001/uploads/${blogs.image}`
+  const imageUrl = `https://my-blog-i44r.onrender.com/uploads/${blogs.image}`
   const { user } = useAuthContext();
 
 
