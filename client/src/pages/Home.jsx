@@ -8,6 +8,7 @@ import Author from '../components/Author'
 import Footer from '../components/Footer';
 import ExploreSection from '../components/ExploreSection';
 import NewsletterSection from '../components/NewsletterSection';
+import InspireSection from '../components/InspireSection';
 
 
 const Home = () => {
@@ -37,9 +38,9 @@ const Home = () => {
         <PostCategory />
       </div>
 
-
-      <About/>
-      <Author name="VE Schwab"/>
+      <InspireSection/>
+      {/* <About/> */}
+      {/* <Author name="VE Schwab"/> */}
       <Footer/>
     </div>
   )
